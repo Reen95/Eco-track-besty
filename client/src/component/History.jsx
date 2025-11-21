@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
+const raw = import.meta.env.VITE_API_BASE;
+const API_BASE = raw === undefined || raw === "" ? "" : raw;
 
 export default function History() {
   const [records, setRecords] = useState([]);
