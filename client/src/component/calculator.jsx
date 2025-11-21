@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
+// client/src/components/Calculator.jsx
+// Replace previous API_BASE line with:
+const raw = import.meta.env.VITE_API_BASE;
+const API_BASE = raw === undefined || raw === "" ? "" : raw;
 
 export default function Calculator({ setResult }) {
   const [inputs, setInputs] = useState({
